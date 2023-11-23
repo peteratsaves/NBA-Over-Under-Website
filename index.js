@@ -8,4 +8,4 @@ people = ['Josh','Alan','Emil','Alan','Eric','Emil','Peter','Peter','Josh','Emil
 
 
 const myElement = document.getElementById("content");
-myElement.innerHTML = "g";
+myElement.innerHTML = "gggs";
