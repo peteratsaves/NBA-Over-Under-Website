@@ -7,6 +7,8 @@ let wins=[8, 13, 8, 5, 5, 9, 10, 2, 12, 8, 8, 9, 7, 10, 3, 10, 12, 12, 9, 9, 11,
 let losses=[8, 4, 8, 10, 13, 8, 6, 15, 6, 9, 6, 7, 9, 8, 13, 7, 4, 5, 9, 7, 5, 5, 6, 5, 12, 6, 14, 9, 11, 14];
 let projected_wins=[41, 63, 41, 27, 23, 43, 51, 10, 55, 39, 47, 46, 36, 46, 15, 48, 62, 58, 41, 46, 56, 58, 53, 58, 24, 49, 14, 39, 29, 14];
 
+let standings = '<h2>Standings</h2><table class="table table-bordered table-striped"><thead class="thead-dark"><tr><th>   </th><th>Person</th><th>W</th><th>L</th><th>Projected Win Differential</th></tr></thead><tbody>';
+
 //Existing Javascript code below
 let alan_text = '<h2>Alan</h2><table id="alan_table"><tr><th>Team</th><th>Over/Under</th><th>Selection</th><th>Wins</th><th>Losses</th><th>Projected Wins</th></tr>';
 let emil_text = '<h2>Emil</h2><table id="alan_table"><tr><th>Team</th><th>Over/Under</th><th>Selection</th><th>Wins</th><th>Losses</th><th>Projected Wins</th></tr>';
@@ -14,16 +16,58 @@ let eric_text = '<h2>Eric</h2><table id="alan_table"><tr><th>Team</th><th>Over/U
 let josh_text = '<h2>Josh</h2><table id="alan_table"><tr><th>Team</th><th>Over/Under</th><th>Selection</th><th>Wins</th><th>Losses</th><th>Projected Wins</th></tr>';
 let peter_text = '<h2>Peter</h2><table id="alan_table"><tr><th>Team</th><th>Over/Under</th><th>Selection</th><th>Wins</th><th>Losses</th><th>Projected Wins</th></tr>';
 
+let standings_dict = {
+    Alan: {
+        name: "Alan",
+        W: 0,
+        L: 0,
+        diff: 0
+    },
+    Eric: {
+        name: "Eric",
+        W: 0,
+        L: 0,
+        diff: 0
+    },
+    Peter: {
+        name: "Peter",
+        W: 0,
+        L: 0,
+        diff: 0
+    },
+    Emil: {
+        name: "Emil",
+        W: 0,
+        L: 0,
+        diff: 0
+    },
+    Josh: {
+        name: "Josh",
+        W: 0,
+        L: 0,
+        diff: 0
+    }
+}
+
+
+
 for (let i = 0; i < people.length; i++) {
     if (people[i] == "Alan"){
         if (over_under[i] == "Over" && projected_wins[i] > overs[i]){
             alan_text = alan_text.concat('<tr id="correct">');
+            standings_dict.Alan.W += 1
+            standings_dict.Alan.diff += (projected_wins[i] - overs[i])
+
         }
         else if (over_under[i] == "Under" && projected_wins[i] < overs[i]){
             alan_text = alan_text.concat('<tr id="correct">');
+            standings_dict.Alan.W += 1
+            standings_dict.Alan.diff += -1*(projected_wins[i] - overs[i])
         }
         else{
             alan_text = alan_text.concat('<tr id="wrong">');
+            standings_dict.Alan.L += 1
+            standings_dict.Alan.diff += (projected_wins[i] - overs[i] > 0) ? -(projected_wins[i] - overs[i]) : (projected_wins[i] - overs[i]);
         }
         alan_text = alan_text.concat("<td>" + teams[i] + "</td>");
         alan_text = alan_text.concat("<td>" + overs[i] + "</td>");
@@ -36,12 +80,18 @@ for (let i = 0; i < people.length; i++) {
     else if (people[i] == "Emil"){
         if (over_under[i] == "Over" && projected_wins[i] > overs[i]){
             emil_text = emil_text.concat('<tr id="correct">');
+            standings_dict.Emil.W += 1
+            standings_dict.Emil.diff += (projected_wins[i] - overs[i])
         }
         else if (over_under[i] == "Under" && projected_wins[i] < overs[i]){
             emil_text = emil_text.concat('<tr id="correct">');
+            standings_dict.Emil.W += 1
+            standings_dict.Emil.diff += -1*(projected_wins[i] - overs[i])
         }
         else{
             emil_text = emil_text.concat('<tr id="wrong">');
+            standings_dict.Emil.L += 1
+            standings_dict.Emil.diff += (projected_wins[i] - overs[i] > 0) ? -(projected_wins[i] - overs[i]) : (projected_wins[i] - overs[i]);
         }
         emil_text = emil_text.concat("<td>" + teams[i] + "</td>");
         emil_text = emil_text.concat("<td>" + overs[i] + "</td>");
@@ -54,12 +104,19 @@ for (let i = 0; i < people.length; i++) {
     else if (people[i] == "Eric"){
         if (over_under[i] == "Over" && projected_wins[i] > overs[i]){
             eric_text = eric_text.concat('<tr id="correct">');
+            standings_dict.Eric.W += 1
+            standings_dict.Eric.diff += (projected_wins[i] - overs[i])
         }
         else if (over_under[i] == "Under" && projected_wins[i] < overs[i]){
             eric_text = eric_text.concat('<tr id="correct">');
+            standings_dict.Eric.W += 1
+            standings_dict.Eric.diff += -1*(projected_wins[i] - overs[i])
         }
         else{
             eric_text = eric_text.concat('<tr id="wrong">');
+            standings_dict.Eric.L += 1
+            standings_dict.Eric.diff += (projected_wins[i] - overs[i] > 0) ? -(projected_wins[i] - overs[i]) : (projected_wins[i] - overs[i]);
+
         }
         eric_text = eric_text.concat("<td>" + teams[i] + "</td>");
         eric_text = eric_text.concat("<td>" + overs[i] + "</td>");
@@ -72,12 +129,18 @@ for (let i = 0; i < people.length; i++) {
     else if (people[i] == "Josh"){
         if (over_under[i] == "Over" && projected_wins[i] > overs[i]){
             josh_text = josh_text.concat('<tr id="correct">');
+            standings_dict.Josh.W += 1
+            standings_dict.Josh.diff += (projected_wins[i] - overs[i])
         }
         else if (over_under[i] == "Under" && projected_wins[i] < overs[i]){
             josh_text = josh_text.concat('<tr id="correct">');
+            standings_dict.Josh.W += 1
+            standings_dict.Josh.diff += -1*(projected_wins[i] - overs[i])
         }
         else{
             josh_text = josh_text.concat('<tr id="wrong">');
+            standings_dict.Josh.L += 1
+            standings_dict.Josh.diff += (projected_wins[i] - overs[i] > 0) ? -(projected_wins[i] - overs[i]) : (projected_wins[i] - overs[i]);
         }
         josh_text = josh_text.concat("<td>" + teams[i] + "</td>");
         josh_text = josh_text.concat("<td>" + overs[i] + "</td>");
@@ -90,12 +153,18 @@ for (let i = 0; i < people.length; i++) {
     else{
         if (over_under[i] == "Over" && projected_wins[i] > overs[i]){
             peter_text = peter_text.concat('<tr id="correct">');
+            standings_dict.Peter.W += 1
+            standings_dict.Peter.diff += (projected_wins[i] - overs[i])
         }
         else if (over_under[i] == "Under" && projected_wins[i] < overs[i]){
             peter_text = peter_text.concat('<tr id="correct">');
+            standings_dict.Peter.W += 1
+            standings_dict.Peter.diff += -1*(projected_wins[i] - overs[i])
         }
         else{
             peter_text = peter_text.concat('<tr id="wrong">');
+            standings_dict.Peter.L += 1
+            standings_dict.Peter.diff += (projected_wins[i] - overs[i] > 0) ? -(projected_wins[i] - overs[i]) : (projected_wins[i] - overs[i]);
         }
         peter_text = peter_text.concat("<td>" + teams[i] + "</td>");
         peter_text = peter_text.concat("<td>" + overs[i] + "</td>");
@@ -106,6 +175,23 @@ for (let i = 0; i < people.length; i++) {
         peter_text = peter_text.concat("</tr>");
     }
 }
+
+// update rank
+let standingsArray = Object.entries(standings_dict);
+
+standingsArray.sort((a, b) => b[1].W - a[1].W || b[1].diff - a[1].diff);
+
+let rank = 1
+let standingsRows = '';
+
+standingsArray.forEach((entry, index) => {
+  standingsRows += `<tr><td>${rank}</td><td>${standings_dict[entry[0]].name}</td><td>${standings_dict[entry[0]].W}</td><td>${standings_dict[entry[0]].L}</td><td>${standings_dict[entry[0]].diff}</td></tr>`;
+  rank += 1;
+});
+
+standings += standingsRows + '</tbody></table>';
+const myElement0 = document.getElementById("standings");
+myElement0.innerHTML = standings;
 
 alan_text = alan_text.concat("</table>");
 const myElement1 = document.getElementById("alan");
