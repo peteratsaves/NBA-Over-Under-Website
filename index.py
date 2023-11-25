@@ -79,9 +79,23 @@ df.loc[len(df.index)] = [7]
 #df.to_csv('/Users/peteratsaves/Desktop/Projects/test2.csv')
 
 import git 
-repo = git.Repo('/Users/peteratsaves/Desktop/Projects') 
-file1 = '/Users/peteratsaves/Desktop/Projects/index.py'
-repo.index.add([file1]) 
-repo.index.commit('Initial commit on new branch')
+#repo = git.Repo('/Users/peteratsaves/Desktop/Projects') 
+#file1 = '/Users/peteratsaves/Desktop/Projects/index.py'
+#repo.index.add([file1]) 
+#repo.index.commit('Initial commit on new branch')
 
 print("X")
+
+
+repo = git.Repo('/Users/peteratsaves/Desktop/Projects') 
+origin = repo.remote(name='origin') 
+  
+existing_branch = repo.heads['main'] 
+existing_branch.checkout() 
+
+file1 = '/Users/peteratsaves/Desktop/Projects/index.py'
+repo.index.add([file1]) 
+repo.index.commit('Initial commit on new branch') 
+print('Commited successfully') 
+origin.push() 
+print('Pushed changes to origin')
