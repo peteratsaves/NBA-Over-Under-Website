@@ -75,13 +75,13 @@ with open('/Users/peteratsaves/Desktop/Projects/index.js', 'w') as f:
 import pandas as pd
 df = pd.DataFrame(columns=['YES'])
 df.loc[len(df.index)] = [7]
-df.to_csv('/Users/peteratsaves/Desktop/Projects/test1.csv')
-df.to_csv('/Users/peteratsaves/Desktop/Projects/test2.csv')
+#df.to_csv('/Users/peteratsaves/Desktop/Projects/test1.csv')
+#df.to_csv('/Users/peteratsaves/Desktop/Projects/test2.csv')
 
 import git 
-repo = git.Repo('/home/hardik/GFG_Temp/Cloned_Repo') 
-
-# Do some changes and commit 
-file1 = '/Users/peteratsaves/Desktop/Projects/index.js'
+repo = git.Repo('/Users/peteratsaves/Desktop/Projects') 
+file1 = '/Users/peteratsaves/Desktop/Projects/index.py'
 repo.index.add([file1]) 
 repo.index.commit('Initial commit on new branch')
+
+print("X")
