@@ -68,16 +68,7 @@ with open('/Users/peteratsaves/Desktop/Projects/index.js', 'w') as f:
     for line in Lines:
         f.write(line)
 
-##
-##
-##
-##
-import pandas as pd
-df = pd.DataFrame(columns=['YES'])
-df.loc[len(df.index)] = [7]
-#df.to_csv('/Users/peteratsaves/Desktop/Projects/test1.csv')
-#df.to_csv('/Users/peteratsaves/Desktop/Projects/test2.csv')
-
+##Automatically push to GitHub
 import git 
 repo = git.Repo('/Users/peteratsaves/Desktop/Projects') 
 origin = repo.remote(name='origin') 
