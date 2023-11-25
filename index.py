@@ -1,3 +1,5 @@
+#pip install GitPython
+
 teams = ['Atlanta Hawks','Boston Celtics','Brooklyn Nets','Charlotte Hornets','Chicago Bulls',
          'Cleveland Cavaliers','Dallas Mavericks','Detroit Pistons','Denver Nuggets','Golden State Warriors',
          'Houston Rockets','Indiana Pacers','Los Angeles Clippers','Los Angeles Lakers','Memphis Grizzlies',
@@ -65,3 +67,21 @@ with open('/Users/peteratsaves/Desktop/Projects/index.js', 'w') as f:
 
     for line in Lines:
         f.write(line)
+
+##
+##
+##
+##
+import pandas as pd
+df = pd.DataFrame(columns=['YES'])
+df.loc[len(df.index)] = [7]
+df.to_csv('/Users/peteratsaves/Desktop/Projects/test1.csv')
+df.to_csv('/Users/peteratsaves/Desktop/Projects/test2.csv')
+
+import git 
+repo = git.Repo('/home/hardik/GFG_Temp/Cloned_Repo') 
+
+# Do some changes and commit 
+file1 = '/Users/peteratsaves/Desktop/Projects/index.js'
+repo.index.add([file1]) 
+repo.index.commit('Initial commit on new branch')
