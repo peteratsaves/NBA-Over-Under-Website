@@ -78,5 +78,5 @@ existing_branch.checkout()
 
 file1 = '/Users/peteratsaves/Desktop/Projects/index.js'
 repo.index.add([file1]) 
-repo.index.commit('Initial commit on new branch') 
+repo.index.commit('Update games and standings') 
 origin.push() 
