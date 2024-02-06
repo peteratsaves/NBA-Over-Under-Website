@@ -69,14 +69,14 @@ with open('/Users/peteratsaves/Desktop/Projects/index.js', 'w') as f:
         f.write(line)
 
 ##Automatically push to GitHub
-import git 
-repo = git.Repo('/Users/peteratsaves/Desktop/Projects') 
-origin = repo.remote(name='origin') 
+#import git 
+#repo = git.Repo('/Users/peteratsaves/Desktop/Projects') 
+#origin = repo.remote(name='origin') 
   
-existing_branch = repo.heads['main'] 
-existing_branch.checkout() 
+#existing_branch = repo.heads['main'] 
+#existing_branch.checkout() 
 
-file1 = '/Users/peteratsaves/Desktop/Projects/index.js'
-repo.index.add([file1]) 
-repo.index.commit('Update games and standings') 
-origin.push() 
+#file1 = '/Users/peteratsaves/Desktop/Projects/index.js'
+#repo.index.add([file1]) 
+#repo.index.commit('Update games and standings') 
+#origin.push() 
