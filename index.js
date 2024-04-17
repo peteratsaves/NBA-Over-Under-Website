@@ -1,11 +1,11 @@
 "use strict";
-let teams=['Atlanta Hawks', 'Boston Celtics', 'Brooklyn Nets', 'Charlotte Hornets', 'Chicago Bulls', 'Cleveland Cavaliers', 'Dallas Mavericks', 'Detroit Pistons', 'Denver Nuggets', 'Golden State Warriors', 'Houston Rockets', 'Indiana Pacers', 'Los Angeles Clippers', 'Los Angeles Lakers', 'Memphis Grizzlies', 'Miami Heat', 'Minnesota Timberwolves', 'Milwaukee Bucks', 'New Orleans Pelicans', 'New York Knicks', 'Oklahoma City Thunder', 'Orlando Magic', 'Phoenix Suns', 'Philadelphia 76ers', 'Portland Trail Blazers', 'Sacramento Kings', 'San Antonio Spurs', 'Toronto Raptors', 'Utah Jazz', 'Washington Wizards'];
+let teams=['Atlanta Hawks*', 'Boston Celtics*', 'Brooklyn Nets', 'Charlotte Hornets', 'Chicago Bulls*', 'Cleveland Cavaliers*', 'Dallas Mavericks*', 'Detroit Pistons', 'Denver Nuggets*', 'Golden State Warriors*', 'Houston Rockets', 'Indiana Pacers*', 'Los Angeles Clippers*', 'Los Angeles Lakers*', 'Memphis Grizzlies', 'Miami Heat*', 'Minnesota Timberwolves*', 'Milwaukee Bucks*', 'New Orleans Pelicans*', 'New York Knicks*', 'Oklahoma City Thunder*', 'Orlando Magic*', 'Phoenix Suns*', 'Philadelphia 76ers*', 'Portland Trail Blazers', 'Sacramento Kings*', 'San Antonio Spurs', 'Toronto Raptors', 'Utah Jazz', 'Washington Wizards'];
 let overs=[42.5, 54.5, 37.5, 31.5, 37.5, 50.5, 43.5, 28.5, 52.5, 47.5, 31.5, 39.5, 45.5, 46.5, 46.5, 44.5, 44.5, 53.5, 44.5, 45.5, 44.5, 37.5, 51.5, 47.5, 27.5, 44.5, 28.5, 36.5, 35.5, 24.5];
 let over_under=['Over', 'Over', 'Over', 'Under', 'Over', 'Over', 'Under', 'Under', 'Over', 'Over', 'Under', 'Over', 'Over', 'Under', 'Under', 'Over', 'Over', 'Over', 'Over', 'Over', 'Over', 'Over', 'Under', 'Over', 'Under', 'Over', 'Under', 'Under', 'Under', 'Under'];
 let people=['Josh', 'Alan', 'Emil', 'Alan', 'Eric', 'Emil', 'Peter', 'Peter', 'Josh', 'Emil', 'Emil', 'Josh', 'Peter', 'Emil', 'Peter', 'Alan', 'Eric', 'Eric', 'Alan', 'Emil', 'Josh', 'Eric', 'Josh', 'Peter', 'Eric', 'Eric', 'Peter', 'Alan', 'Josh', 'Alan'];
-let wins=[29, 49, 26, 16, 31, 41, 36, 10, 44, 33, 29, 36, 41, 36, 22, 35, 44, 42, 39, 37, 45, 37, 37, 36, 18, 36, 14, 23, 28, 11];
-let losses=[35, 14, 39, 48, 33, 23, 28, 53, 20, 30, 35, 29, 22, 30, 43, 29, 21, 23, 25, 27, 19, 28, 27, 28, 45, 27, 50, 41, 36, 53];
-let projected_wins=[37, 64, 33, 20, 40, 53, 46, 13, 56, 43, 37, 45, 53, 45, 28, 45, 56, 53, 50, 47, 58, 47, 47, 46, 23, 47, 18, 29, 36, 14];
+let wins=[36, 64, 32, 21, 39, 48, 50, 14, 57, 46, 41, 47, 51, 47, 27, 46, 56, 49, 49, 50, 57, 47, 49, 47, 21, 46, 22, 25, 31, 15];
+let losses=[46, 18, 50, 61, 43, 34, 32, 68, 25, 36, 41, 35, 31, 35, 55, 36, 26, 33, 33, 32, 25, 35, 33, 35, 61, 36, 60, 57, 51, 67];
+let projected_wins=[36, 64, 32, 21, 39, 48, 50, 14, 57, 46, 41, 47, 51, 47, 27, 46, 56, 49, 49, 50, 57, 47, 49, 47, 21, 46, 22, 25, 31, 15];
 
 //Existing Javascript code below
 let standings = '<h2>Standings</h2><table class="table table-bordered table-striped"><thead class="thead-dark"><tr><th>   </th><th>Person</th><th>W</th><th>L</th><th>Projected Win Differential</th></tr></thead><tbody>';
